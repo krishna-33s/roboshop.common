@@ -19,7 +19,7 @@ cd /usr/share/nginx/html &>>$log_file
 unzip /tmp/frontend.zip &>>$log_file
 Validate $? "code and unzipping"
 
-#
+rm -rf /etc/nginx/nginx.conf
 
 cp $current_path/nginx.conf /etc/nginx/nginx.conf &>>$log_file
 Validate $? "configuration added"
