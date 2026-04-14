@@ -4,8 +4,8 @@ source ./common.sh
 
 appname=cart
 root
-nodejs_setup
 appsetup
+nodejs_setup
 system_setup
 
 total_time_taken
