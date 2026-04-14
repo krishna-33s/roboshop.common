@@ -5,6 +5,10 @@ appname=frontend
 root
 nginx_setup
 
+systemctl enable nginx  &>>$log_file
+systemctl start nginx 
+Validate $? "Enabled and started nginx"
+
 rm -rf /usr/share/nginx/html/* 
 Validate $? "remove default content"
 
