@@ -5,6 +5,14 @@ appname=frontend
 root
 nginx_setup
 
+dnf module disable nginx -y &>>$log_file
+Validate $? "disabling nginx"
+
+dnf module enable nginx:1.24 -y &>>$log_file
+Validate $? "enabling:1.24 nginx"
+
+dnf install nginx -y &>>$log_file
+Validate $? "installing nginx"
 systemctl enable nginx  &>>$log_file
 systemctl start nginx 
 Validate $? "Enabled and started nginx"
