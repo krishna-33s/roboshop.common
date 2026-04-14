@@ -13,7 +13,7 @@ current_path=$PWD
 
 mkdir -p $log_folder
 
-echo "$(date "+%Y-%m-%d %H:%M:%S") | script started at: $(date)" | tee -a $log_file
+echo -e "$(date "+%Y-%m-%d %H:%M:%S") | script started at: $g $(date)" | tee -a $log_file
 
 root(){
     if [ $user_id -ne 0 ]; then
