@@ -3,7 +3,6 @@
 source ./common.sh
 appname=frontend
 root
-nginx_setup
 
 
 dnf module disable nginx -y &>>$log_file
