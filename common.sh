@@ -54,10 +54,10 @@ java_setup(){
 
     cd /app
     mvn clean package &>>$log_file
-    Validate $? "Installing and Building shipping"
+    Validate $? "Installing and Building $appname"
 
-    mv target/shipping-1.0.jar shipping.jar 
-    Validate $? "Moving and Renaming shipping"
+    mv target/$appname-1.0.jar $appname.jar 
+    Validate $? "Moving and Renaming $appname"
 
 }
 
