@@ -48,6 +48,19 @@ nodejs_setup(){
 
 }
 
+java_setup(){
+    dnf install maven -y &>>$log_file
+    Validate $? "Installing Maven"
+
+    cd /app
+    mvn clean package &>>$log_file
+    Validate $? "Installing and Building shipping"
+
+    mv target/shipping-1.0.jar shipping.jar 
+    Validate $? "Moving and Renaming shipping"
+
+}
+
 appsetup(){
     id roboshop &>>$log_file
     if [ $? -ne 0 ]; then
