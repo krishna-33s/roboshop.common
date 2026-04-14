@@ -61,6 +61,19 @@ java_setup(){
 
 }
 
+python_setup(){
+    dnf install python3 gcc python3-devel -y &>>$log_file
+    Validate $? "installing python"
+    
+    cd /app 
+    pip3 install -r requirements.txt &>>$log_file
+    Validate $? "installing dependencies"
+
+    cp $current_path/$appname.service /etc/systemd/system/$appname.service &>>$log_file
+    Validate $? "creating $appname systemctl"
+
+}
+
 appsetup(){
     id roboshop &>>$log_file
     if [ $? -ne 0 ]; then
