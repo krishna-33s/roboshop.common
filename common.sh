@@ -73,7 +73,7 @@ appsetup(){
     mkdir -p /app
     Validate $? "creating app directory"
 
-    curl -o /tmp/$appname.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$log_file 
+    curl -o /tmp/$appname.zip https://roboshop-artifacts.s3.amazonaws.com/$appname-v3.zip &>>$log_file 
     Validate $? "downloading $appname code"
 
     cd /app
