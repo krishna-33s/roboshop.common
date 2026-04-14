@@ -74,6 +74,17 @@ python_setup(){
 
 }
 
+nginx_setup(){
+    dnf module disable nginx -y &>>$log_file
+    Validate $? "disabling nginx"
+
+    dnf module enable nginx:1.24 -y &>>$log_file
+    Validate $? "enabling:1.24 nginx"
+
+    dnf install nginx -y &>>$log_file
+    Validate $? "installing nginx"
+}
+
 appsetup(){
     id roboshop &>>$log_file
     if [ $? -ne 0 ]; then
