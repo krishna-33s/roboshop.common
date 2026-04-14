@@ -8,7 +8,7 @@ g="\e[32m"
 y="\e[33m"
 n="\e[0m"
 start_time=$(date +%s)
-$mongo_ip=mongodb.krishnadev.space
+mongo_ip=mongodb.krishnadev.space
 current_path=$PWD
 
 mkdir -p $log_folder
