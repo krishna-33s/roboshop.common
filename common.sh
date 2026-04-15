@@ -81,13 +81,13 @@ appsetup(){
         useradd --system --home /app --shell /sbin/nologin --comment "roboshop system user" roboshop &>>$log_file 
         Validate $? "creating user"
     else
-        echo "roboshop already exist"
+        echo -e "$g roboshop already exist $n"
     fi 
 
     mkdir -p /app
     Validate $? "creating app directory"
 
-    curl -o /tmp/$appname.zip https://roboshop-builds.s3.amazonaws.com/$appname.zip &>>$log_file 
+    curl -o /tmp/$appname.zip https://roboshop-artifacts.s3.amazonaws.com/$appname-v3.zip &>>$log_file 
     Validate $? "downloading $appname code"
 
     cd /app
